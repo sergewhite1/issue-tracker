@@ -6,6 +6,12 @@ MainWindow::MainWindow(QWidget *parent)
   , ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
+
+  ui->cbType->addItem("TASK");
+  ui->cbType->setCurrentIndex(0);
+
+  ui->cbStatus->addItem("IN PROGRESS");
+  ui->cbStatus->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
@@ -13,3 +19,8 @@ MainWindow::~MainWindow()
   delete ui;
 }
 
+
+void MainWindow::on_pushBtnClose_released()
+{
+    close();
+}
